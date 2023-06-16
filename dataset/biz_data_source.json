@@ -1,0 +1,25 @@
+{
+	"name": "biz_data_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "svg_westus_datalakestorage_biz_data",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "csv"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "svgwestusstagingbizdata2"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
