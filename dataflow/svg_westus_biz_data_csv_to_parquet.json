@@ -1,0 +1,42 @@
+{
+	"name": "svg_westus_biz_data_csv_to_parquet",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "biz_data_source",
+						"type": "DatasetReference"
+					},
+					"name": "svgwestusbizdatacsvsource"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "svg_westus_datalakestorage_biz_data_parquet",
+						"type": "DatasetReference"
+					},
+					"name": "svgwestusbizdataparquetsink"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     inferDriftedColumnTypes: true,",
+				"     ignoreNoFilesFound: false,",
+				"     wildcardPaths:['source/*.csv']) ~> svgwestusbizdatacsvsource",
+				"svgwestusbizdatacsvsource sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'parquet',",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> svgwestusbizdataparquetsink"
+			]
+		}
+	}
+}
