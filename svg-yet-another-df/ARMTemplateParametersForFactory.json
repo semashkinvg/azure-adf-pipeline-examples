@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "svg-yet-another-df"
+		},
+		"svg_westus_datalakestorage_biz_data_accountKey": {
+			"value": ""
+		},
+		"svg_westus_datalakestorage_biz_data_properties_typeProperties_url": {
+			"value": "https://svgwestusstagingbizdata2.dfs.core.windows.net/"
+		}
+	}
+}
